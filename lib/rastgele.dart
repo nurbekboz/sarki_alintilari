@@ -1,5 +1,8 @@
 import 'dart:math';
+import 'package:ask_sozleri/service/Count.dart';
+import 'package:ask_sozleri/service/firebaseadmob.dart';
 import 'package:clipboard/clipboard.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 
@@ -123,7 +126,7 @@ class _RastgeleState extends State<Rastgele> {
     "assets/arkaplan/r44.jpg"
   ];
   var soz = '';
-  // final ams = AdMobService();
+  final ams = AdMobService();
 
   @override
   void initState() {
@@ -133,8 +136,8 @@ class _RastgeleState extends State<Rastgele> {
 
   @override
   Widget build(BuildContext context) {
-    /* InterstitialAd newAdd = ams.getNewTripInterstitial();
-    newAdd.load();*/
+    InterstitialAd newAdd = ams.getNewTripInterstitial();
+    newAdd.load();
     return Material(
       elevation: 8,
       shadowColor: Colors.white60,
@@ -201,7 +204,7 @@ class _RastgeleState extends State<Rastgele> {
                             color: Colors.white,
                           ),
                           onPressed: () {
-                            /*      if (ReklamMiktari.ReklamSayisi % 101 == 0) {
+                            if (ReklamMiktari.ReklamSayisi % 101 == 0) {
                               ReklamMiktari.ReklamSayisi =
                                   ReklamMiktari.ReklamSayisi + 1;
                             } else {
@@ -209,7 +212,7 @@ class _RastgeleState extends State<Rastgele> {
                                   anchorType: AnchorType.bottom,
                                   anchorOffset: 0.0,
                                   horizontalCenterOffset: 0.0);
-                            }*/
+                            }
                             setState(() {
                               soz = sozler
                                   .elementAt(Random().nextInt(sozler.length));
@@ -251,9 +254,9 @@ class _RastgeleState extends State<Rastgele> {
 Future<void> paylas(String soz) async {
   await FlutterShare.share(
       title: "Paylaş",
-      text:
-          "Daha fazla söz için uygulamayı hemen indir! : https://play.google.com/store/apps/details?id=com.viennasoft.ozlu_sozler",
-      linkUrl: "$soz",
+      text: "$soz",
+      linkUrl:
+          "Daha fazla söz için uygulamayı hemen indir! : https://play.google.com/store/apps/details?id=com.viennasoft.sarki_sozleri",
       chooserTitle: "Uygulamayı paylaş");
 }
 /*Smule

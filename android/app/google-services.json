@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "966468878860",
+    "project_id": "sayone-205a5",
+    "storage_bucket": "sayone-205a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966468878860:android:7df60406fec9eba475a429",
+        "android_client_info": {
+          "package_name": "com.viennasoft.sarki_sozleri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966468878860-0bhvd53tkh3mculeoj1fhhbtmlmo3aiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_TBUj_jMoTHUs2iT6-oonemZanbz31dU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966468878860-0bhvd53tkh3mculeoj1fhhbtmlmo3aiv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

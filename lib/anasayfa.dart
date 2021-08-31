@@ -1,5 +1,6 @@
 import 'package:ask_sozleri/liste.dart';
 import 'package:ask_sozleri/rastgele.dart';
+import 'package:ask_sozleri/service/ad_services.dart';
 import 'package:flutter/material.dart';
 
 class Anasayfa extends StatelessWidget {
@@ -40,6 +41,10 @@ class Anasayfa extends StatelessWidget {
             Sozler(),
             Rastgele(),
           ],
+        ),
+        bottomNavigationBar: Container(
+          height: 60,
+          child: Center(child: BannerReklam()),
         ),
       ),
     );

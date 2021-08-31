@@ -1,4 +1,6 @@
+import 'package:ask_sozleri/service/firebaseadmob.dart';
 import 'package:clipboard/clipboard.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 
@@ -12,12 +14,12 @@ class SozKategorileri extends StatefulWidget {
 
 class _SozKategorileriState extends State<SozKategorileri> {
   var soz = '';
-  // final ams = AdMobService();
+  final ams = AdMobService();
 
   @override
   Widget build(BuildContext context) {
-    /*  InterstitialAd newAdd = ams.getNewTripInterstitial();
-    newAdd.load();*/
+    InterstitialAd newAdd = ams.getNewTripInterstitial();
+    newAdd.load();
     return Column(
       children: [
         Padding(
@@ -71,9 +73,9 @@ class _SozKategorileriState extends State<SozKategorileri> {
                               size: 30,
                             ),
                             onPressed: () async {
-                              await FlutterClipboard.copy('$soz');
+                              await FlutterClipboard.copy('${widget.aciklama}');
                               Scaffold.of(context).showSnackBar(SnackBar(
-                                  backgroundColor: Color(0xfff1d9bf0),
+                                  backgroundColor: Color(0xfffa46ea9),
                                   content:
                                       Text(" ✓ Söz başarıyla kopyalandı.")));
                             },
@@ -95,7 +97,8 @@ class _SozKategorileriState extends State<SozKategorileri> {
 Future<void> paylas(String soz) async {
   await FlutterShare.share(
       title: "Paylaş",
-      text: "Daha fazla söz için uygulamayı hemen indir! : link",
-      linkUrl: "$soz",
+      text: "$soz",
+      linkUrl:
+          "Daha fazla söz için uygulamayı hemen indir! : https://play.google.com/store/apps/details?id=com.viennasoft.sarki_sozleri",
       chooserTitle: "Uygulamayı paylaş");
 }
